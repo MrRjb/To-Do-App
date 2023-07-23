@@ -17,15 +17,15 @@ add_button = PySimpleGUI.Button("Add", size=10)
 listbox = PySimpleGUI.Listbox(values=functions.get_todo(), key="todos", 
                               enable_events=True, size=[45, 10])
 
-edit_button = PySimpleGUI.Button("Edit")
-complete_button = PySimpleGUI.Button("Complete")
-exit_button = PySimpleGUI.Button("Exit")
+edit_button = PySimpleGUI.Button("Edit", size=10)
+complete_button = PySimpleGUI.Button("Complete", size=10)
+exit_button = PySimpleGUI.Button("Exit", size=10)
+
+col1 = PySimpleGUI.Column([[clock], [label], [input_box], [listbox]])
+col2 = PySimpleGUI.Column([[add_button], [edit_button], [complete_button]])
 
 window = PySimpleGUI.Window("My To-Do App. Created by - RJB", 
-                            layout=[[clock],
-                                    [label], 
-                                    [input_box, add_button], 
-                                    [listbox, edit_button, complete_button],
+                            layout=[[col1, col2],
                                     [exit_button]],
                             font=("Helvetica", 20))
 
