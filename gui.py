@@ -1,10 +1,15 @@
 import PySimpleGUI
 import functions
 import time 
+import os
 
 PySimpleGUI.theme("DarkPurple4")
 
 clock = PySimpleGUI.Text('', key='clock')
+
+if not os.path.exists('todos.txt'):
+    with open('todos.txt', 'w') as file:
+        pass
 
 label = PySimpleGUI.Text("Type in a new todo below: ")
 input_box = PySimpleGUI.Input(tooltip="Enter todo here", key="todo")
